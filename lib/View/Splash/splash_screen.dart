@@ -1,4 +1,5 @@
 
+// 스플래시 스크린 : 앱 구동 시 3초간 보이는 로고 화면
 import 'dart:async';
 
 import 'package:flutter/material.dart';
