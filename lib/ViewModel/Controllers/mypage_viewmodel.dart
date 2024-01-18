@@ -4,8 +4,9 @@
 
 import 'package:get/get.dart';
 
-import '../../Model/wine.dart';
-import '../../Repository/wine_repository.dart';
+import '../../Model/favorited_wine.dart';
+import '../../Repository/favoritedwine_repository.dart';
+
 
 
 // 아래 코드는 더미 코드로 변경하여 사용하면 됩니다.
