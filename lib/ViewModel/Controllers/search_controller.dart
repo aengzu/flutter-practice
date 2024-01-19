@@ -19,5 +19,5 @@ class SearchViewModel extends GetxController {
     wines.value = categoryWines; // 검색된 와인 목록으로 업데이트
   }
 
-// 기타 ViewModel 로직
+
 }

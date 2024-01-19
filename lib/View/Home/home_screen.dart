@@ -1,9 +1,7 @@
-
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-
-
-// 홈 화면 스크린 구현을 위한 파일
+import '../../ViewModel/Controllers/home_ controller.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -13,23 +11,39 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-
-  @override
-  void initState() {
-    super.initState();
-  }
+  final controller = Get.put(HomeController());
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: const Scaffold(
-            backgroundColor: Colors.white,
-            body: Center(
-              child: Text('This is home screen',
-                      style: TextStyle(fontSize:30),),
-            )
-        )
-
+    return Scaffold(
+      body: const SafeArea(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            children: [
+              SizedBox(height: 20),
+              // 본문 내용
+              SizedBox(height: 20),
+            ],
+          ),
+        ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.menu),
+            label: 'Menu',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.notifications_none_rounded),
+            label: 'Notifications',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_circle),
+            label: 'Profile',
+          ),
+        ],
+      ),
     );
   }
 }
