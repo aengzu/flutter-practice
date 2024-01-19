@@ -6,9 +6,10 @@ class Wine {
   int? id;
   String? name;
   String? category;
-double? price;
+  double? price;
+  int? alcohol;
 
-Wine({this.id, this.name, this.category, this.price});
+Wine({this.id, this.name, this.category, this.price, this.alcohol});
 
 // 데이터베이스로부터 데이터를 읽어오거나,
 // 데이터베이스에 데이터를 쓸 때 사용할 수 있는 메소드들
