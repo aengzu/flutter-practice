@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 
 void main() {
   runApp(
-      MaterialApp(home: RecommendThirdScreen()), //const RecommendScreen()
+      MaterialApp(home: RecommendFourthScreen()), //const RecommendScreen()
   );
 }
 
@@ -335,3 +335,114 @@ class RecommendThirdScreen extends StatelessWidget {
     );
   }
 }
+
+class RecommendFourthScreen extends StatelessWidget {
+  const RecommendFourthScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 40,
+            ),
+            Container(
+              // 메인 로고
+                alignment: Alignment.center,
+                child: Image.asset(ImageAssets.main, width: 50, height: 50, )
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            Row(
+              // 진행상태 바
+              children: [
+                Flexible(
+                  child: Container(
+                    decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Color.fromRGBO(180, 67, 133, 1)
+                        )
+                    ),
+                    height: 3,
+                  ),
+                  flex: 4,
+                ),
+                Flexible(
+                  child: Container(
+                    decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black.withOpacity(1)
+                        )
+                    ),
+                    height: 3,
+                  ),
+                  flex: 2,
+                )
+              ],
+            ),
+            SizedBox(
+              height: 60,
+            ),
+            SizedBox(
+              // 어떤 안주가 좋은가요?
+                child: Text('어떤 안주가 좋은가요?', style: TextStyle(fontSize: 25, fontWeight: FontWeight.w900))
+            ),
+            SizedBox(
+              height: 64,
+            ),
+            Container(
+              // 위치 체크용 '육류' 버튼 추가 예정
+              color: Colors.blue, width: double.infinity, height: 60,
+            ),
+            SizedBox(
+              height: 8,
+            ),
+            Container(
+              // 위치 체크용 '해산물' 버튼 추가 예정
+              color: Colors.blue, width: double.infinity, height: 60,
+            ),
+            SizedBox(
+              height: 8,
+            ),
+            Container(
+              // 위치 체크용 '피자 or 치즈' 버튼 추가 예정
+              color: Colors.blue, width: double.infinity, height: 60,
+            ),
+            SizedBox(
+              height: 8,
+            ),
+            Container(
+              // 위치 체크용 '과일 or 샐러드' 버튼 추가 예정
+              color: Colors.blue, width: double.infinity, height: 60,
+            ),
+            SizedBox(
+              height: 8,
+            ),
+            Container(
+              // 위치 체크용 '디저트 or 스낵' 버튼 추가 예정
+              color: Colors.blue, width: double.infinity, height: 60,
+            ),
+            SizedBox(
+              height: 80,
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 110),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  // 버튼 추가 예정
+                  Text('이전'),
+                  Text('다음'),
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
