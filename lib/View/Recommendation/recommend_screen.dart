@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 
 void main() {
   runApp(
-      MaterialApp(home: RecommendSecondScreen()), //const RecommendScreen()
+      MaterialApp(home: RecommendThirdScreen()), //const RecommendScreen()
   );
 }
 
@@ -168,35 +168,151 @@ class RecommendSecondScreen extends StatelessWidget {
               height: 45,
             ),
             Container(
-              // 위치 체크용 '초심자' 버튼 추가 예정
+              // 위치 체크용 '가족적인' 버튼 추가 예정
               color: Colors.blue, width: double.infinity, height: 60,
             ),
             SizedBox(
               height: 8,
             ),
             Container(
-              // 위치 체크용 '베테랑' 버튼 추가 예정
+              // 위치 체크용 '감성에 젖은' 버튼 추가 예정
               color: Colors.blue, width: double.infinity, height: 60,
             ),
             SizedBox(
               height: 8,
             ),
             Container(
-              // 위치 체크용 '베테랑' 버튼 추가 예정
+              // 위치 체크용 '시끌벅적한' 버튼 추가 예정
               color: Colors.blue, width: double.infinity, height: 60,
             ),
             SizedBox(
               height: 8,
             ),
             Container(
-              // 위치 체크용 '베테랑' 버튼 추가 예정
+              // 위치 체크용 '수다스러운' 버튼 추가 예정
               color: Colors.blue, width: double.infinity, height: 60,
             ),
             SizedBox(
               height: 8,
             ),
             Container(
-              // 위치 체크용 '베테랑' 버튼 추가 예정
+              // 위치 체크용 '혼자만의' 버튼 추가 예정
+              color: Colors.blue, width: double.infinity, height: 60,
+            ),
+            SizedBox(
+              height: 80,
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 110),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  // 버튼 추가 예정
+                  Text('이전'),
+                  Text('다음'),
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class RecommendThirdScreen extends StatelessWidget {
+  const RecommendThirdScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 40,
+            ),
+            Container(
+              // 메인 로고
+                alignment: Alignment.center,
+                child: Image.asset(ImageAssets.main, width: 50, height: 50, )
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            Row(
+              // 진행상태 바
+              children: [
+                Flexible(
+                  child: Container(
+                    decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Color.fromRGBO(180, 67, 133, 1)
+                        )
+                    ),
+                    height: 3,
+                  ),
+                  flex: 3,
+                ),
+                Flexible(
+                  child: Container(
+                    decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black.withOpacity(1)
+                        )
+                    ),
+                    height: 3,
+                  ),
+                  flex: 3,
+                )
+              ],
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            SizedBox(
+              // 어떤 맛의 와인을
+                child: Text('어떤맛의 와인을', style: TextStyle(fontSize: 25, fontWeight: FontWeight.w900))
+            ),
+            SizedBox(
+              height: 1,
+            ),
+            SizedBox(
+                child: Text('원하나요?', style: TextStyle(fontSize: 25, fontWeight: FontWeight.w900))
+            ),
+            SizedBox(
+              height: 45,
+            ),
+            Container(
+              // 위치 체크용 '상큼한(산미가 강한)' 버튼 추가 예정
+              color: Colors.blue, width: double.infinity, height: 60,
+            ),
+            SizedBox(
+              height: 8,
+            ),
+            Container(
+              // 위치 체크용 '달콤한' 버튼 추가 예정
+              color: Colors.blue, width: double.infinity, height: 60,
+            ),
+            SizedBox(
+              height: 8,
+            ),
+            Container(
+              // 위치 체크용 '진하고 무거운' 버튼 추가 예정
+              color: Colors.blue, width: double.infinity, height: 60,
+            ),
+            SizedBox(
+              height: 8,
+            ),
+            Container(
+              // 위치 체크용 '건조하고 가벼운' 버튼 추가 예정
+              color: Colors.blue, width: double.infinity, height: 60,
+            ),
+            SizedBox(
+              height: 8,
+            ),
+            Container(
+              // 위치 체크용 '향긋한' 버튼 추가 예정
               color: Colors.blue, width: double.infinity, height: 60,
             ),
             SizedBox(
