@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 
 void main() {
   runApp(
-      MaterialApp(home: RecommendFifthScreen()), //const RecommendScreen()
+      MaterialApp(home: RecommendSixthScreen()), //const RecommendScreen()
   );
 }
 
@@ -533,6 +533,116 @@ class RecommendFifthScreen extends StatelessWidget {
             ),
             Container(
               // 위치 체크용 '16 ~ 20' 버튼 추가 예정
+              color: Colors.blue, width: double.infinity, height: 60,
+            ),
+            SizedBox(
+              height: 80,
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 110),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  // 버튼 추가 예정
+                  Text('이전'),
+                  Text('다음'),
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class RecommendSixthScreen extends StatelessWidget {
+  const RecommendSixthScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 40,
+            ),
+            Container(
+              // 메인 로고
+                alignment: Alignment.center,
+                child: Image.asset(ImageAssets.main, width: 50, height: 50, )
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            Row(
+              // 진행상태 바
+              children: [
+                Flexible(
+                  child: Container(
+                    decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Color.fromRGBO(180, 67, 133, 1)
+                        )
+                    ),
+                    height: 3,
+                  ),
+                  flex: 6,
+                ),
+                Flexible(
+                  child: Container(
+                    decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black.withOpacity(1)
+                        )
+                    ),
+                    height: 3,
+                  ),
+                  flex: 0,
+                )
+              ],
+            ),
+            SizedBox(
+              height: 60,
+            ),
+            SizedBox(
+              //가격은 어느정도가 좋은가요?
+                child: Text('가격은 어느정도가 좋은가요?', style: TextStyle(fontSize: 25, fontWeight: FontWeight.w900))
+            ),
+            SizedBox(
+              height: 64,
+            ),
+            Container(
+              // 위치 체크용 버튼 추가 예정 가격 바운더리 설정 필요
+              color: Colors.blue, width: double.infinity, height: 60,
+            ),
+            SizedBox(
+              height: 8,
+            ),
+            Container(
+              // 위치 체크용 버튼 추가 예정 가격 바운더리 설정 필요
+              color: Colors.blue, width: double.infinity, height: 60,
+            ),
+            SizedBox(
+              height: 8,
+            ),
+            Container(
+              // 위치 체크용 버튼 추가 예정 가격 바운더리 설정 필요
+              color: Colors.blue, width: double.infinity, height: 60,
+            ),
+            SizedBox(
+              height: 8,
+            ),
+            Container(
+              // 위치 체크용 버튼 추가 예정 가격 바운더리 설정 필요
+              color: Colors.blue, width: double.infinity, height: 60,
+            ),
+            SizedBox(
+              height: 8,
+            ),
+            Container(
+              // 위치 체크용 버튼 추가 예정 가격 바운더리 설정 필요
               color: Colors.blue, width: double.infinity, height: 60,
             ),
             SizedBox(
