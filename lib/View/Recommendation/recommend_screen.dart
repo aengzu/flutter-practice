@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 
 void main() {
   runApp(
-      MaterialApp(home: RecommendSixthScreen()), //const RecommendScreen()
+      MaterialApp(home: RecommendScreen()), //const RecommendScreen()
   );
 }
 
@@ -666,3 +666,40 @@ class RecommendSixthScreen extends StatelessWidget {
   }
 }
 
+class RecommendFinalScreen extends StatelessWidget {
+  const RecommendFinalScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 300,
+            ),
+            Container(
+              // 대표 아이콘
+              child: Image.asset(ImageAssets.main, width: 100, height: 100,),
+              alignment: Alignment.center,
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            SizedBox(
+              // 분석중
+              child: Text('분석중', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),),
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            SizedBox(
+              // AI가 와인을 고르고 있어요
+              child: Text('AI가 와인을 고르고 있어요 !', style: TextStyle(fontSize: 22, fontWeight: FontWeight.w900),),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
