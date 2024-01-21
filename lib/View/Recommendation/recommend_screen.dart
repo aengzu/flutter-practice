@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 
 void main() {
   runApp(
-      MaterialApp(home: RecommendScreen()), //const RecommendScreen()
+      MaterialApp(home: RecommendSecondScreen()), //const RecommendScreen()
   );
 }
 
@@ -88,6 +88,122 @@ class RecommendScreen extends StatelessWidget {
             ),
             Padding(
                 padding: EdgeInsets.symmetric(horizontal: 110),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  // 버튼 추가 예정
+                  Text('이전'),
+                  Text('다음'),
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class RecommendSecondScreen extends StatelessWidget {
+  const RecommendSecondScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 40,
+            ),
+            Container(
+              // 메인 로고
+                alignment: Alignment.center,
+                child: Image.asset(ImageAssets.main, width: 50, height: 50, )
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            Row(
+              // 진행상태 바
+              children: [
+                Flexible(
+                  child: Container(
+                    decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Color.fromRGBO(180, 67, 133, 1)
+                        )
+                    ),
+                    height: 3,
+                  ),
+                  flex: 2,
+                ),
+                Flexible(
+                  child: Container(
+                    decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black.withOpacity(1)
+                        )
+                    ),
+                    height: 3,
+                  ),
+                  flex: 4,
+                )
+              ],
+            ),
+            SizedBox(
+              height: 40,
+            ),
+            SizedBox(
+              // 오늘의
+                child: Text('오늘의', style: TextStyle(fontSize: 25, fontWeight: FontWeight.w900))
+            ),
+            SizedBox(
+              height: 1,
+            ),
+            SizedBox(
+                child: Text('술자리 분위기는?', style: TextStyle(fontSize: 25, fontWeight: FontWeight.w900))
+            ),
+            SizedBox(
+              height: 45,
+            ),
+            Container(
+              // 위치 체크용 '초심자' 버튼 추가 예정
+              color: Colors.blue, width: double.infinity, height: 60,
+            ),
+            SizedBox(
+              height: 8,
+            ),
+            Container(
+              // 위치 체크용 '베테랑' 버튼 추가 예정
+              color: Colors.blue, width: double.infinity, height: 60,
+            ),
+            SizedBox(
+              height: 8,
+            ),
+            Container(
+              // 위치 체크용 '베테랑' 버튼 추가 예정
+              color: Colors.blue, width: double.infinity, height: 60,
+            ),
+            SizedBox(
+              height: 8,
+            ),
+            Container(
+              // 위치 체크용 '베테랑' 버튼 추가 예정
+              color: Colors.blue, width: double.infinity, height: 60,
+            ),
+            SizedBox(
+              height: 8,
+            ),
+            Container(
+              // 위치 체크용 '베테랑' 버튼 추가 예정
+              color: Colors.blue, width: double.infinity, height: 60,
+            ),
+            SizedBox(
+              height: 80,
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 110),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
