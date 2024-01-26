@@ -73,7 +73,10 @@ class _HomeScreenState extends State<HomeScreen> {
                           ],
                         ),
                       ),
-                      onPressed: (){},
+                      onPressed: (){
+                        // HomeController의 메서드를 호출하여 화면 전환
+                        controller.navigateToRecommendScreen();
+                      },
                     ),
                   ),
                   SizedBox(height: 20),
