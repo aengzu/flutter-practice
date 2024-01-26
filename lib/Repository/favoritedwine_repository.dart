@@ -1,19 +1,21 @@
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
+
+import '../Model/wine.dart';
 //  찜한 와인과 관련된 데이터베이스 작업을 담당합니다. 찜 목록을 조회하거나,
 //  새로운 와인을 찜 목록에 추가하고, 찜 목록에서 와인을 제거하는 기능을 포함
 
 class FavoritedWineRepository {
 
  var _favoriteWineDB;
+ int? id;
+ Wine? wine;
+ DateTime? favoritedDate;
 
  Future<void> _initDatabase() async {
   //데이터베이스 경로 설정
   String path=join(await getDatabasesPath(), 'favoriteWine.db');
 
-  int? id;
-  Wine? wine;
-  DateTime? favoritedDate;
   //데이터베이스 열기
    _favoriteWineDB=await openDatabase(path, version:1,
   onCreate: (Database db, int version) async{
