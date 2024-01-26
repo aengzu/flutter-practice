@@ -1,11 +1,12 @@
 // 추천 알고리즘을 위한 스크린 -> 화면이 여러개라 파일 더 만들어야할수도>>?
 import 'package:flutter/material.dart';
 import 'package:flutter_practice/Resources/images/image_assets.dart';
+import 'package:flutter_practice/View/Recommendation/reuse_button.dart';
 import 'package:get/get.dart';
 
 void main() {
   runApp(
-      MaterialApp(home: RecommendScreen()), //const RecommendScreen()
+    MaterialApp(home: RecommendSixthScreen()), //const RecommendScreen()
   );
 }
 
@@ -23,7 +24,7 @@ class RecommendScreen extends StatelessWidget {
             ),
             Container(
               // 메인 로고
-              alignment: Alignment.center,
+                alignment: Alignment.center,
                 child: Image.asset(ImageAssets.main, width: 50, height: 50, )
             ),
             SizedBox(
@@ -57,11 +58,11 @@ class RecommendScreen extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 50,
+              height: 60,
             ),
             SizedBox(
               // 나는 와인
-              child: Text('나는 와인', style: TextStyle(fontSize: 25, fontWeight: FontWeight.w900))
+                child: Text('나는 와인', style: TextStyle(fontSize: 25, fontWeight: FontWeight.w900))
             ),
             SizedBox(
               height: 5,
@@ -70,30 +71,53 @@ class RecommendScreen extends StatelessWidget {
                 child: Text('(첫 응답에만 나와요!)', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500))
             ),
             SizedBox(
-              height: 85,
+              height: 90,
             ),
-            Container(
-              // 위치 체크용 '초심자' 버튼 추가 예정
-              color: Colors.blue, width: double.infinity, height: 60,
+            TextButton(
+              // 초심자 버튼
+              child: Button(text: '초심자', bgColor:
+              Color.fromRGBO(251, 245, 249, 1.0), bdColor:
+              Color.fromRGBO(180, 67, 133, 1), txColor:
+              Color.fromRGBO(0, 0, 0, 1)),
+              onPressed: (){},
             ),
             SizedBox(
               height: 30,
             ),
-            Container(
-              // 위치 체크용 '베테랑' 버튼 추가 예정
-              color: Colors.blue, width: double.infinity, height: 60,
+            TextButton(
+              // 베테랑 버튼
+              child: Button(text: '베테랑', bgColor:
+              Color.fromRGBO(251, 245, 249, 1.0), bdColor:
+              Color.fromRGBO(180, 67, 133, 1), txColor:
+              Color.fromRGBO(0, 0, 0, 1)),
+              onPressed: (){},
             ),
             SizedBox(
               height: 200,
             ),
             Padding(
-                padding: EdgeInsets.symmetric(horizontal: 110),
+              padding: EdgeInsets.symmetric(horizontal: 48),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  // 버튼 추가 예정
-                  Text('이전'),
-                  Text('다음'),
+                  SizedBox(
+                    width: 35,
+                  ),
+                  TextButton(
+                    child: Container(
+                      // 다음 버튼
+                      decoration: BoxDecoration(
+                          color: Color.fromRGBO(
+                              255, 255, 255, 1.0),
+                          borderRadius: BorderRadius.circular(45), border: Border.all(color: Color.fromRGBO(190, 190, 190, 1))
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(vertical: 12, horizontal: 38),
+                        child: Text('다음', style: TextStyle(fontSize: 20, color: Colors.black),),
+                      ),
+                    ),
+                    onPressed: (){},
+                  ),
                 ],
               ),
             )
@@ -167,49 +191,82 @@ class RecommendSecondScreen extends StatelessWidget {
             SizedBox(
               height: 45,
             ),
-            Container(
-              // 위치 체크용 '가족적인' 버튼 추가 예정
-              color: Colors.blue, width: double.infinity, height: 60,
+            TextButton(
+              child: Button(text: '가족적인', bgColor:
+              Color.fromRGBO(251, 245, 249, 1.0), bdColor:
+              Color.fromRGBO(180, 67, 133, 1), txColor:
+              Color.fromRGBO(0, 0, 0, 1)),
+              onPressed: (){},
             ),
-            SizedBox(
-              height: 8,
+            TextButton(
+              child: Button(text: '감성에 젖은', bgColor:
+              Color.fromRGBO(251, 245, 249, 1.0), bdColor:
+              Color.fromRGBO(180, 67, 133, 1), txColor:
+              Color.fromRGBO(0, 0, 0, 1)),
+              onPressed: (){},
             ),
-            Container(
-              // 위치 체크용 '감성에 젖은' 버튼 추가 예정
-              color: Colors.blue, width: double.infinity, height: 60,
+            TextButton(
+              child: Button(text: '시끌벅적한', bgColor:
+              Color.fromRGBO(251, 245, 249, 1.0), bdColor:
+              Color.fromRGBO(180, 67, 133, 1), txColor:
+              Color.fromRGBO(0, 0, 0, 1)),
+              onPressed: (){},
             ),
-            SizedBox(
-              height: 8,
+            TextButton(
+              child: Button(text: '수다스러운', bgColor:
+              Color.fromRGBO(251, 245, 249, 1.0), bdColor:
+              Color.fromRGBO(180, 67, 133, 1), txColor:
+              Color.fromRGBO(0, 0, 0, 1)),
+              onPressed: (){},
             ),
-            Container(
-              // 위치 체크용 '시끌벅적한' 버튼 추가 예정
-              color: Colors.blue, width: double.infinity, height: 60,
-            ),
-            SizedBox(
-              height: 8,
-            ),
-            Container(
-              // 위치 체크용 '수다스러운' 버튼 추가 예정
-              color: Colors.blue, width: double.infinity, height: 60,
-            ),
-            SizedBox(
-              height: 8,
-            ),
-            Container(
-              // 위치 체크용 '혼자만의' 버튼 추가 예정
-              color: Colors.blue, width: double.infinity, height: 60,
+            TextButton(
+              child: Button(text: '혼자만의', bgColor:
+              Color.fromRGBO(251, 245, 249, 1.0), bdColor:
+              Color.fromRGBO(180, 67, 133, 1), txColor:
+              Color.fromRGBO(0, 0, 0, 1)),
+              onPressed: (){},
             ),
             SizedBox(
               height: 80,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 110),
+              padding: EdgeInsets.symmetric(horizontal: 48),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  // 버튼 추가 예정
-                  Text('이전'),
-                  Text('다음'),
+                  TextButton(
+                    child: Container(
+                      // 이전 버튼
+                      decoration: BoxDecoration(
+                          color: Color.fromRGBO(
+                              255, 255, 255, 1.0),
+                          borderRadius: BorderRadius.circular(45), border: Border.all(color: Color.fromRGBO(190, 190, 190, 1))
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(vertical: 12, horizontal: 38),
+                        child: Text('이전', style: TextStyle(fontSize: 20, color: Colors.black),),
+                      ),
+                    ),
+                    onPressed: (){},
+                  ),
+                  SizedBox(
+                    width: 35,
+                  ),
+                  TextButton(
+                    child: Container(
+                      // 다음 버튼
+                      decoration: BoxDecoration(
+                          color: Color.fromRGBO(
+                              255, 255, 255, 1.0),
+                          borderRadius: BorderRadius.circular(45), border: Border.all(color: Color.fromRGBO(190, 190, 190, 1))
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(vertical: 12, horizontal: 38),
+                        child: Text('다음', style: TextStyle(fontSize: 20, color: Colors.black),),
+                      ),
+                    ),
+                    onPressed: (){},
+                  ),
                 ],
               ),
             )
@@ -283,49 +340,82 @@ class RecommendThirdScreen extends StatelessWidget {
             SizedBox(
               height: 45,
             ),
-            Container(
-              // 위치 체크용 '상큼한(산미가 강한)' 버튼 추가 예정
-              color: Colors.blue, width: double.infinity, height: 60,
+            TextButton(
+              child: Button(text: '상큼한(산미가 강한)', bgColor:
+              Color.fromRGBO(251, 245, 249, 1.0), bdColor:
+              Color.fromRGBO(180, 67, 133, 1), txColor:
+              Color.fromRGBO(0, 0, 0, 1)),
+              onPressed: (){},
             ),
-            SizedBox(
-              height: 8,
+            TextButton(
+              child: Button(text: '달콤한', bgColor:
+              Color.fromRGBO(251, 245, 249, 1.0), bdColor:
+              Color.fromRGBO(180, 67, 133, 1), txColor:
+              Color.fromRGBO(0, 0, 0, 1)),
+              onPressed: (){},
             ),
-            Container(
-              // 위치 체크용 '달콤한' 버튼 추가 예정
-              color: Colors.blue, width: double.infinity, height: 60,
+            TextButton(
+              child: Button(text: '진하고 무거운', bgColor:
+              Color.fromRGBO(251, 245, 249, 1.0), bdColor:
+              Color.fromRGBO(180, 67, 133, 1), txColor:
+              Color.fromRGBO(0, 0, 0, 1)),
+              onPressed: (){},
             ),
-            SizedBox(
-              height: 8,
+            TextButton(
+              child: Button(text: '건조하고 가벼운', bgColor:
+              Color.fromRGBO(251, 245, 249, 1.0), bdColor:
+              Color.fromRGBO(180, 67, 133, 1), txColor:
+              Color.fromRGBO(0, 0, 0, 1)),
+              onPressed: (){},
             ),
-            Container(
-              // 위치 체크용 '진하고 무거운' 버튼 추가 예정
-              color: Colors.blue, width: double.infinity, height: 60,
-            ),
-            SizedBox(
-              height: 8,
-            ),
-            Container(
-              // 위치 체크용 '건조하고 가벼운' 버튼 추가 예정
-              color: Colors.blue, width: double.infinity, height: 60,
-            ),
-            SizedBox(
-              height: 8,
-            ),
-            Container(
-              // 위치 체크용 '향긋한' 버튼 추가 예정
-              color: Colors.blue, width: double.infinity, height: 60,
+            TextButton(
+              child: Button(text: '향긋한', bgColor:
+              Color.fromRGBO(251, 245, 249, 1.0), bdColor:
+              Color.fromRGBO(180, 67, 133, 1), txColor:
+              Color.fromRGBO(0, 0, 0, 1)),
+              onPressed: (){},
             ),
             SizedBox(
               height: 80,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 110),
+              padding: EdgeInsets.symmetric(horizontal: 48),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  // 버튼 추가 예정
-                  Text('이전'),
-                  Text('다음'),
+                  TextButton(
+                    child: Container(
+                      // 이전 버튼
+                      decoration: BoxDecoration(
+                          color: Color.fromRGBO(
+                              255, 255, 255, 1.0),
+                          borderRadius: BorderRadius.circular(45), border: Border.all(color: Color.fromRGBO(190, 190, 190, 1))
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(vertical: 12, horizontal: 38),
+                        child: Text('이전', style: TextStyle(fontSize: 20, color: Colors.black),),
+                      ),
+                    ),
+                    onPressed: (){},
+                  ),
+                  SizedBox(
+                    width: 35,
+                  ),
+                  TextButton(
+                    child: Container(
+                      // 다음 버튼
+                      decoration: BoxDecoration(
+                          color: Color.fromRGBO(
+                              255, 255, 255, 1.0),
+                          borderRadius: BorderRadius.circular(45), border: Border.all(color: Color.fromRGBO(190, 190, 190, 1))
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(vertical: 12, horizontal: 38),
+                        child: Text('다음', style: TextStyle(fontSize: 20, color: Colors.black),),
+                      ),
+                    ),
+                    onPressed: (){},
+                  ),
                 ],
               ),
             )
@@ -393,49 +483,82 @@ class RecommendFourthScreen extends StatelessWidget {
             SizedBox(
               height: 64,
             ),
-            Container(
-              // 위치 체크용 '육류' 버튼 추가 예정
-              color: Colors.blue, width: double.infinity, height: 60,
+            TextButton(
+              child: Button(text: '육류', bgColor:
+              Color.fromRGBO(251, 245, 249, 1.0), bdColor:
+              Color.fromRGBO(180, 67, 133, 1), txColor:
+              Color.fromRGBO(0, 0, 0, 1)),
+              onPressed: (){},
             ),
-            SizedBox(
-              height: 8,
+            TextButton(
+              child: Button(text: '해산물', bgColor:
+              Color.fromRGBO(251, 245, 249, 1.0), bdColor:
+              Color.fromRGBO(180, 67, 133, 1), txColor:
+              Color.fromRGBO(0, 0, 0, 1)),
+              onPressed: (){},
             ),
-            Container(
-              // 위치 체크용 '해산물' 버튼 추가 예정
-              color: Colors.blue, width: double.infinity, height: 60,
+            TextButton(
+              child: Button(text: '피자 or 치즈', bgColor:
+              Color.fromRGBO(251, 245, 249, 1.0), bdColor:
+              Color.fromRGBO(180, 67, 133, 1), txColor:
+              Color.fromRGBO(0, 0, 0, 1)),
+              onPressed: (){},
             ),
-            SizedBox(
-              height: 8,
+            TextButton(
+              child: Button(text: '과일 or 샐러드', bgColor:
+              Color.fromRGBO(251, 245, 249, 1.0), bdColor:
+              Color.fromRGBO(180, 67, 133, 1), txColor:
+              Color.fromRGBO(0, 0, 0, 1)),
+              onPressed: (){},
             ),
-            Container(
-              // 위치 체크용 '피자 or 치즈' 버튼 추가 예정
-              color: Colors.blue, width: double.infinity, height: 60,
-            ),
-            SizedBox(
-              height: 8,
-            ),
-            Container(
-              // 위치 체크용 '과일 or 샐러드' 버튼 추가 예정
-              color: Colors.blue, width: double.infinity, height: 60,
-            ),
-            SizedBox(
-              height: 8,
-            ),
-            Container(
-              // 위치 체크용 '디저트 or 스낵' 버튼 추가 예정
-              color: Colors.blue, width: double.infinity, height: 60,
+            TextButton(
+              child: Button(text: '디저트 or 스낵', bgColor:
+              Color.fromRGBO(251, 245, 249, 1.0), bdColor:
+              Color.fromRGBO(180, 67, 133, 1), txColor:
+              Color.fromRGBO(0, 0, 0, 1)),
+              onPressed: (){},
             ),
             SizedBox(
               height: 80,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 110),
+              padding: EdgeInsets.symmetric(horizontal: 48),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  // 버튼 추가 예정
-                  Text('이전'),
-                  Text('다음'),
+                  TextButton(
+                    child: Container(
+                      // 이전 버튼
+                      decoration: BoxDecoration(
+                          color: Color.fromRGBO(
+                              255, 255, 255, 1.0),
+                          borderRadius: BorderRadius.circular(45), border: Border.all(color: Color.fromRGBO(190, 190, 190, 1))
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(vertical: 12, horizontal: 38),
+                        child: Text('이전', style: TextStyle(fontSize: 20, color: Colors.black),),
+                      ),
+                    ),
+                    onPressed: (){},
+                  ),
+                  SizedBox(
+                    width: 35,
+                  ),
+                  TextButton(
+                    child: Container(
+                      // 다음 버튼
+                      decoration: BoxDecoration(
+                          color: Color.fromRGBO(
+                              255, 255, 255, 1.0),
+                          borderRadius: BorderRadius.circular(45), border: Border.all(color: Color.fromRGBO(190, 190, 190, 1))
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(vertical: 12, horizontal: 38),
+                        child: Text('다음', style: TextStyle(fontSize: 20, color: Colors.black),),
+                      ),
+                    ),
+                    onPressed: (){},
+                  ),
                 ],
               ),
             )
@@ -503,49 +626,82 @@ class RecommendFifthScreen extends StatelessWidget {
             SizedBox(
               height: 64,
             ),
-            Container(
-              // 위치 체크용 '4 ~ 6' 버튼 추가 예정
-              color: Colors.blue, width: double.infinity, height: 60,
+            TextButton(
+              child: Button(text: '4 ~ 6', bgColor:
+              Color.fromRGBO(251, 245, 249, 1.0), bdColor:
+              Color.fromRGBO(180, 67, 133, 1), txColor:
+              Color.fromRGBO(0, 0, 0, 1)),
+              onPressed: (){},
             ),
-            SizedBox(
-              height: 8,
+            TextButton(
+              child: Button(text: '7 ~ 9', bgColor:
+              Color.fromRGBO(251, 245, 249, 1.0), bdColor:
+              Color.fromRGBO(180, 67, 133, 1), txColor:
+              Color.fromRGBO(0, 0, 0, 1)),
+              onPressed: (){},
             ),
-            Container(
-              // 위치 체크용 '7 ~ 9' 버튼 추가 예정
-              color: Colors.blue, width: double.infinity, height: 60,
+            TextButton(
+              child: Button(text: '10 ~ 12', bgColor:
+              Color.fromRGBO(251, 245, 249, 1.0), bdColor:
+              Color.fromRGBO(180, 67, 133, 1), txColor:
+              Color.fromRGBO(0, 0, 0, 1)),
+              onPressed: (){},
             ),
-            SizedBox(
-              height: 8,
+            TextButton(
+              child: Button(text: '13 ~ 15', bgColor:
+              Color.fromRGBO(251, 245, 249, 1.0), bdColor:
+              Color.fromRGBO(180, 67, 133, 1), txColor:
+              Color.fromRGBO(0, 0, 0, 1)),
+              onPressed: (){},
             ),
-            Container(
-              // 위치 체크용 '10 ~ 12' 버튼 추가 예정
-              color: Colors.blue, width: double.infinity, height: 60,
-            ),
-            SizedBox(
-              height: 8,
-            ),
-            Container(
-              // 위치 체크용 '13 ~ 15' 버튼 추가 예정
-              color: Colors.blue, width: double.infinity, height: 60,
-            ),
-            SizedBox(
-              height: 8,
-            ),
-            Container(
-              // 위치 체크용 '16 ~ 20' 버튼 추가 예정
-              color: Colors.blue, width: double.infinity, height: 60,
+            TextButton(
+              child: Button(text: '16 ~ 20', bgColor:
+              Color.fromRGBO(251, 245, 249, 1.0), bdColor:
+              Color.fromRGBO(180, 67, 133, 1), txColor:
+              Color.fromRGBO(0, 0, 0, 1)),
+              onPressed: (){},
             ),
             SizedBox(
               height: 80,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 110),
+              padding: EdgeInsets.symmetric(horizontal: 48),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  // 버튼 추가 예정
-                  Text('이전'),
-                  Text('다음'),
+                  TextButton(
+                    child: Container(
+                      // 이전 버튼
+                      decoration: BoxDecoration(
+                          color: Color.fromRGBO(
+                              255, 255, 255, 1.0),
+                          borderRadius: BorderRadius.circular(45), border: Border.all(color: Color.fromRGBO(190, 190, 190, 1))
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(vertical: 12, horizontal: 38),
+                        child: Text('이전', style: TextStyle(fontSize: 20, color: Colors.black),),
+                      ),
+                    ),
+                    onPressed: (){},
+                  ),
+                  SizedBox(
+                    width: 35,
+                  ),
+                  TextButton(
+                    child: Container(
+                      // 다음 버튼
+                      decoration: BoxDecoration(
+                          color: Color.fromRGBO(
+                              255, 255, 255, 1.0),
+                          borderRadius: BorderRadius.circular(45), border: Border.all(color: Color.fromRGBO(190, 190, 190, 1))
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(vertical: 12, horizontal: 38),
+                        child: Text('다음', style: TextStyle(fontSize: 20, color: Colors.black),),
+                      ),
+                    ),
+                    onPressed: (){},
+                  ),
                 ],
               ),
             )
@@ -613,49 +769,82 @@ class RecommendSixthScreen extends StatelessWidget {
             SizedBox(
               height: 64,
             ),
-            Container(
-              // 위치 체크용 버튼 추가 예정 가격 바운더리 설정 필요
-              color: Colors.blue, width: double.infinity, height: 60,
+            TextButton(
+              child: Button(text: '2만원 미만', bgColor:
+              Color.fromRGBO(251, 245, 249, 1.0), bdColor:
+              Color.fromRGBO(180, 67, 133, 1), txColor:
+              Color.fromRGBO(0, 0, 0, 1)),
+              onPressed: (){},
             ),
-            SizedBox(
-              height: 8,
+            TextButton(
+              child: Button(text: '2 ~ 3만원대', bgColor:
+              Color.fromRGBO(251, 245, 249, 1.0), bdColor:
+              Color.fromRGBO(180, 67, 133, 1), txColor:
+              Color.fromRGBO(0, 0, 0, 1)),
+              onPressed: (){},
             ),
-            Container(
-              // 위치 체크용 버튼 추가 예정 가격 바운더리 설정 필요
-              color: Colors.blue, width: double.infinity, height: 60,
+            TextButton(
+              child: Button(text: '4 ~ 6만원대', bgColor:
+              Color.fromRGBO(251, 245, 249, 1.0), bdColor:
+              Color.fromRGBO(180, 67, 133, 1), txColor:
+              Color.fromRGBO(0, 0, 0, 1)),
+              onPressed: (){},
             ),
-            SizedBox(
-              height: 8,
+            TextButton(
+              child: Button(text: '7 ~ 9만원대', bgColor:
+              Color.fromRGBO(251, 245, 249, 1.0), bdColor:
+              Color.fromRGBO(180, 67, 133, 1), txColor:
+              Color.fromRGBO(0, 0, 0, 1)),
+              onPressed: (){},
             ),
-            Container(
-              // 위치 체크용 버튼 추가 예정 가격 바운더리 설정 필요
-              color: Colors.blue, width: double.infinity, height: 60,
-            ),
-            SizedBox(
-              height: 8,
-            ),
-            Container(
-              // 위치 체크용 버튼 추가 예정 가격 바운더리 설정 필요
-              color: Colors.blue, width: double.infinity, height: 60,
-            ),
-            SizedBox(
-              height: 8,
-            ),
-            Container(
-              // 위치 체크용 버튼 추가 예정 가격 바운더리 설정 필요
-              color: Colors.blue, width: double.infinity, height: 60,
+            TextButton(
+              child: Button(text: '10만원 초과', bgColor:
+              Color.fromRGBO(251, 245, 249, 1.0), bdColor:
+              Color.fromRGBO(180, 67, 133, 1), txColor:
+              Color.fromRGBO(0, 0, 0, 1)),
+              onPressed: (){},
             ),
             SizedBox(
               height: 80,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 110),
+              padding: EdgeInsets.symmetric(horizontal: 48),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  // 버튼 추가 예정
-                  Text('이전'),
-                  Text('다음'),
+                  TextButton(
+                    child: Container(
+                      // 이전 버튼
+                      decoration: BoxDecoration(
+                          color: Color.fromRGBO(
+                              255, 255, 255, 1.0),
+                          borderRadius: BorderRadius.circular(45), border: Border.all(color: Color.fromRGBO(190, 190, 190, 1))
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(vertical: 12, horizontal: 38),
+                        child: Text('이전', style: TextStyle(fontSize: 20, color: Colors.black),),
+                      ),
+                    ),
+                    onPressed: (){},
+                  ),
+                  SizedBox(
+                    width: 35,
+                  ),
+                  TextButton(
+                    child: Container(
+                      // 다음 버튼
+                      decoration: BoxDecoration(
+                          color: Color.fromRGBO(
+                              255, 255, 255, 1.0),
+                          borderRadius: BorderRadius.circular(45), border: Border.all(color: Color.fromRGBO(190, 190, 190, 1))
+                      ),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(vertical: 12, horizontal: 38),
+                        child: Text('다음', style: TextStyle(fontSize: 20, color: Colors.black),),
+                      ),
+                    ),
+                    onPressed: (){},
+                  ),
                 ],
               ),
             )

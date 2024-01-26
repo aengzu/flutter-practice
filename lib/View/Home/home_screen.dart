@@ -21,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           children: [
             Padding(
-            // Dionysos, 일러스트, 와인 고르러 가기 버튼 구성
+              // Dionysos, 일러스트, 와인 고르러 가기 버튼 구성
               padding: EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 children: [
@@ -31,18 +31,50 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       Image.asset(ImageAssets.main, width: 50, height: 50,),
                       Text('Dionysos.',
-                        style: TextStyle(
-                            fontSize: 25, color: Color.fromRGBO(180, 67, 133, 1), fontWeight: FontWeight.w600
-                        )
+                          style: TextStyle(
+                              fontSize: 25, color: Color.fromRGBO(180, 67, 133, 1), fontWeight: FontWeight.w600
+                          )
                       ),
                     ],
                   ),
                   SizedBox(height: 10),
                   // 일러스트
                   Image.asset(ImageAssets.illustration, width: 330, height: 330),
-                  SizedBox(height: 20),
-                  // 와인 고르러 가기 버튼
-                  Container(color: Color.fromRGBO(180, 67, 133, 1), height: 60,),
+                  SizedBox(height: 15),
+                  Padding(
+                    // 와인 고르러 가기 버튼d
+                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    child: TextButton(
+                      child: Container(
+                        width: 320,
+                        height: 50,
+                        // 4~6만원대 버튼
+                        decoration: BoxDecoration(
+                            color: Color.fromRGBO(
+                                255, 255, 255, 1.0),
+                            borderRadius: BorderRadius.circular(45), border: Border.all(color: Color.fromRGBO(180, 67, 133, 1))
+                        ),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            SizedBox(
+                              width: 85,
+                            ),
+                            Container(
+                              child: Text('와인 고르러 가기', style: TextStyle(fontSize: 18, color: Color.fromRGBO(117, 45, 91, 1), fontWeight: FontWeight.w600),),
+                            ),
+                            SizedBox(
+                              width: 5,
+                            ),
+                            Container(
+                              child: Icon(Icons.keyboard_double_arrow_right, color: Color.fromRGBO(117, 45, 91, 1), size: 32),
+                            ),
+                          ],
+                        ),
+                      ),
+                      onPressed: (){},
+                    ),
+                  ),
                   SizedBox(height: 20),
                 ],
               ),
@@ -62,7 +94,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     // 오늘의 추천 조합
                     alignment: Alignment.centerLeft,
                     child: Text('오늘의 추천 조합',
-                      style: TextStyle(fontSize: 17, fontWeight: FontWeight.w900, color: Color.fromRGBO(116, 45, 90, 1))),
+                        style: TextStyle(fontSize: 17, fontWeight: FontWeight.w900, color: Color.fromRGBO(116, 45, 90, 1))),
                   ),
                   SizedBox(height: 20),
                   Row(
