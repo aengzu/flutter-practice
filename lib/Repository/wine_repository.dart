@@ -11,9 +11,12 @@ class WineRepository {
   //와인 모델
   int? id;
   String? name;
-  String? category;
-  double? price;
+  String? mood;
+  String? taste; 
+  String? snack;
   int? alcohol;
+  double? price;
+ 
 
   Future<void> processUserData(List<Map<String, dynamic>> wineData) async {
     // 사용자의 선택값을 AI모델의 패키지로 보내서 비교.
@@ -37,11 +40,6 @@ class WineRepository {
     // 여기에서 AI 모델의 결과를 활용하여 작업 수행
     print('사용자가 선택한 카테고리에 어울리는 안주는  $category');
   }
-
-
-  getWinesByCategory(String category) {}
- // Future<List<Wine>> getWinesByCategory(String category) async {
- // }
 
 }
 
