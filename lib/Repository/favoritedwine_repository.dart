@@ -12,6 +12,8 @@ class FavoritedWineRepository {
  Wine? wine;
  DateTime? favoritedDate;
 
+
+//favoriteWineDB 초기화. 
  Future<void> _initDatabase() async {
   //데이터베이스 경로 설정
   String path=join(await getDatabasesPath(), 'favoriteWine.db');

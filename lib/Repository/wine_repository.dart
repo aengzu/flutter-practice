@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
+import 'package:tflite_flutter/tflite_flutter.dart';
 // SQLite 데이터베이스와의 상호작용을 담당하는 클래스.
 // 예를 들어 특정 카테고리에 속하는 와인을 검색하는 메소드를 제공하는 클래스
 // + 와인 랜덤 추천 메소드 제공
@@ -16,8 +17,8 @@ class WineRepository {
   String? snack;
   int? alcohol;
   double? price;
- 
 
+  //입력값을 AI모델로 바꾸기.
   Future<void> processUserData(List<Map<String, dynamic>> wineData) async {
     // 사용자의 선택값을 AI모델의 패키지로 보내서 비교.
     //어떤 속성으로 데이터를 불러올지는 추후에 조정 필요.
@@ -25,7 +26,7 @@ class WineRepository {
     for (var wine in wineData) {
        id=wine['id'];
        name=wine['name'];
-      category=wine['category'];
+
       price=wine['price'];
       alcohol=wine['alcohol'];
 
