@@ -5,7 +5,7 @@ import '../Controllers/home_ controller.dart';
 import 'package:tflite_flutter/tflite_flutter.dart';
 
 
-class SplashServices {
+class recommendation_controller {
 
   void runModel(List<String> input) {
     // 모델 초기화

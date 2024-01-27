@@ -1,8 +1,9 @@
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
-
 import '../Model/wine.dart';
-//  찜한 와인과 관련된 데이터베이스 작업을 담당합니다. 찜 목록을 조회하거나,
+import './Repository/wine_repository.dart';
+//  찜한 와인과 관련된 데이터베이스 작업을 담당합니다.
+ 찜 목록을 조회하거나,
 //  새로운 와인을 찜 목록에 추가하고, 찜 목록에서 와인을 제거하는 기능을 포함
 
 class FavoritedWineRepository {
