@@ -3,28 +3,51 @@
 import 'package:get/get.dart';
 import '../Controllers/home_ controller.dart';
 import 'package:tflite_flutter/tflite_flutter.dart';
+import '../Model/wine.dart';
 
 
 class recommendation_controller {
 
-  void runModel(List<String> input) {
-    // 모델 초기화
-    TFLiteModelInterpreter.runModelOnBinary(_convertInputToBinary(input));
-    // 결과 처리
+    Wine? wine;
+    List<String> list;
 
-    //Model/wine_repository로 송신
-    sendData(input);
-  }
+    //List로 넘길 때&asset에서 자료 불러올 때. 
+    void setMood(String mood){
+        wine[mood]=mood;
+    }
+    void setTaste(String taste){
+        wine[taste]=taste;
+    }
+    void setSnack(String snack){
+        wine[snack]=snack;
+    }
+    void setAlcohol(String alcohol){
+        wine[alcohol]=alcohol;
+    }
+    void setPrice(Sring price){
+        wine[price]=price;
+    }
 
-  List<String> sendData(List<String> input){
-    return input;
-  }
+    //출력받을 때. 
+    wine getWine(){
+        
+    }
+    void makeList(){
+        
+        list.add(wine[mood]);
+        list.add(wine[taste]);
+        list.add(wine[snack]);
+        list.add(wine[alcohol]);
+        list.add(wine[price]);
 
-  static Future<void> getdata() async {
+        runModel(list);
+
+    }
+
+    static Future<void> getdata() async {
     {
       final controller = Get.put(HomeController());
       await controller.getData(); // 데이터 로딩을 대기
-
     }
   }
 }

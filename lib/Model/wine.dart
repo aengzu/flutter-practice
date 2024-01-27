@@ -5,9 +5,11 @@
 class Wine {
   int? id;
   String? name;
-  String? category;
-  double? price;
+  String? mood;
+  String? snack;
   int? alcohol;
+  double? price;
+  String? type;
 
 Wine({this.id, this.name, this.category, this.price, this.alcohol});
 
